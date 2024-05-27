@@ -12,7 +12,9 @@ switch (cmd) {
   case 'del':
     await commands.delTodo(Number(userInputs[3]))
     break
-
+  case 'update':
+    await commands.upTask(Number(userInputs[3]), userInputs[4])
+    break
   default:
     console.log(`I don't understand that command: ${cmd}`)
 }

@@ -14,5 +14,9 @@ export function close() {
 
 export function deleteTodo(id) {
   console.log('db', id)
-  return db('todos').where({ id }).update({ task: 'hi' })
+  return db('todos').where({ id }).del()
+}
+
+export function updateTask(id, task) {
+  return db('todos').where({ id }).update({ task })
 }
