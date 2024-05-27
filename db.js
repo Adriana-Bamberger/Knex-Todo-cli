@@ -25,3 +25,7 @@ export function searchTasks(search) {
   const result = db('todos').select('*').whereLike('task', `%${search}%`)
   return result
 }
+
+export function completeTask(id) {
+  return db('todos').where({ id }).update('is_done', true)
+}
