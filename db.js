@@ -20,3 +20,8 @@ export function deleteTodo(id) {
 export function updateTask(id, task) {
   return db('todos').where({ id }).update({ task })
 }
+
+export function searchTasks(search) {
+  const result = db('todos').select('*').whereLike('task', `%${search}%`)
+  return result
+}
