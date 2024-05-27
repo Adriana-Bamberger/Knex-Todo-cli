@@ -3,10 +3,14 @@ import * as commands from './commands.js'
 
 const userInputs = process.argv
 const cmd = userInputs[2]
-
+// console.log(userInputs)
 switch (cmd) {
   case 'list':
     await commands.list()
+    break
+
+  case 'del':
+    await commands.delTodo(Number(userInputs[3]))
     break
 
   default:
